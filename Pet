@@ -1,0 +1,239 @@
+create table propietario
+(
+
+idprop integer primary key not null ,
+nome character varying(100),
+endereco character varying(100),
+telefone character(13),
+valorgasto numeric(12,2),
+cidade character varying(100),
+estado character(02)
+
+);
+
+
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (1, 'Aguinaldo Cordeiro', 'Rua Araujo Leite 27-01', '14 3222-7899', 787.00, 'Bauru', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (2, 'Amália Gabriel', 'Alameda Saturno 4-35', '14 82784-9878', 3332.00, 'Jaú', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (3, 	'Cláudio Lara Tagliari', 'Rua Alto Acre 13-61', '14 97974-3348', 937.00, 'Agudos', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (4, 'Conceição Dudlara', 'Rua Bernadino de Campos 13-47', '14 3106-5667', 4000.00, 'Bauru', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (5, 'Severino Pedrero', 'Rua General Marcondes Salgado 1-11', '14 3106-7791', 800.00, 'Bauru', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (6, 'Teresinha de Fátima', 'Avenida Nuno de Assis 8-51', '14 93434-9874', 5815.00, 'Pederneiras', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (7, 'Geraldo do Amaral', 'Rua Chile 3-42', '14 3236-4758', 2555.00, 'Bauru', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (8, 'Gabriel Almeida', 'Avenida Brasil 10-30', '11 82594-9628', 3000.00, 'São Paulo', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (9, 'Clauber Júnior', 'Rua dos limoeiros 5-64', '14 99457-2384', 571.00, 'Agudos', 'SP');
+
+INSERT INTO propietario ("idprop", "nome", "endereco", "telefone", "valorgasto", "cidade", "estado")
+values (10, 'Pedro Genisvaldo', 'Rua das Macieiras 4-31', '14 3278-4621', 600.00, 'Bauru', 'SP');
+
+	select * from propietario;
+	SELECT idprop, nome FROM propietario;
+	SELECT nome, idprop FROM propietario;
+	SELECT nome, cidade, estado FROM propietario;
+	SELECT nome, cidade, estado FROM propietario WHERE estado = 'SP';
+	SELECT nome, cidade, estado FROM propietario WHERE cidade = 'Bauru';
+	SELECT nome, telefone FROM propietario ORDER BY nome;
+	SELECT nome, telefone FROM propietario ORDER BY nome DESC;
+	SELECT nome, telefone FROM propietario ORDER BY estado, cidade;
+	SELECT nome, telefone FROM propietario ORDER BY estado DESC, cidade;
+	SELECT nome, telefone FROM propietario ORDER BY cidade, nome;
+	SELECT nome, telefone FROM propietario WHERE nome LIKE '%A%';
+	SELECT nome, telefone FROM propietario WHERE nome LIKE 'G%';
+	SELECT nome, telefone FROM propietario WHERE nome LIKE '%o';
+
+create table veterinario
+(
+
+idvet integer primary key not null ,
+nome character varying(100),
+telefone character(13),
+anonasc smallint,
+crmv character varying(10)
+
+
+);
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (1, 'Arthur Cordeiro Aguia', '14 4223-9878', 1966, '2989');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (2, 'Gabriel Amalgama Titto', '14 82384-1111', 1975, '4112');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (3, 'Lara Tagliari Claudiana', '14 97334-1143', 1958, '1198');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (4, 'Renata Puragua', '14 3103-3445', 1983, '24907');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (5, 'Severo Rincon Silva', '14 3101-9174', 1990, '41239');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (6, 'Tereza Luzia Costa', '14 92431-7499', 1968, '3978');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (7, 'Pedro Felipe Prudente', '14 99842-7356', 1962, '3457');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (8, 'Renato Mengues', '14 3457-3278', 1979, '1579');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (9, 'Severíssimo da Costa', '14 3105-6722', 1987, '56219');
+
+INSERT INTO veterinario ("idvet", "nome", "telefone", "anonasc", "crmv")
+values (10, 'Robson Gomes ', '14 99854-3240', 1975, '3748');
+
+
+select * from veterinario;
+SELECT nome FROM veterinario WHERE nome LIKE '%b%';
+SELECT idvet, nome FROM veterinario ORDER BY nome;
+SELECT nome, telefone FROM veterinario WHERE anonasc<1985;
+SELECT nome, anonasc FROM veterinario WHERE anonasc>1980 AND anonasc<2010;
+SELECT nome, crmv FROM veterinario WHERE crmv LIKE '%123%';
+SELECT nome, telefone FROM veterinario WHERE nome LIKE 'C%' ORDER BY nome;
+
+
+create table animal
+(
+
+idpet integer primary key not null ,
+nome character varying(100),
+datanasc date not null,
+raca character varying(50),
+idprop integer not null,
+valorpago numeric(12,2),
+tipo character(8)
+
+);
+
+ALTER TABLE animal	
+ADD FOREIGN KEY (idprop) REFERENCES propietario (idprop);
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (1, 'Lola', '2008-03-12', 'Poodle', '3', 0.00, 'Doado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (2, 'Pitico','2008-03-12', 'Chihuahua', '1', 300.00, 'Comprado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (3, 'Viralata', '2008-03-12', 'Chow Chow', '6', 5000.00, 'Comprado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (4, 'Estrela', '2008-03-12', 'Beagle', '2', 2500.00, 'Comprado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (5, 'Evita', '2008-03-12', 'Labrador', '4', 0.00, 'Doado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (6, 'Dog','2008-03-12', 'Chihuahua', '9', 320.00, 'Comprado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (7, 'Thor', '2008-03-12', 'Pastor Alemão', '10', 3560.00, 'Comprado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (8, 'Belinha', '2008-03-12', 'Pit-Bull', '8', 2580.00, 'Comprado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (9, 'God', '2008-03-12', 'Doberman', '5', 4587.00, 'Comprado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (10, 'Rosnado', '2008-03-12', 'Pincher', '7', 150.00, 'Comprado');
+
+INSERT INTO animal ("idpet", "nome", "datanasc", "raca", "idprop", "valorpago", "tipo")
+values (11, 'Florzinha', '2008-05-11', 'Rottweiler', '7', 499.00, 'Comprado');
+
+
+
+
+select * FROM animal;
+SELECT * FROM animal WHERE tipo='Doado';
+SELECT * FROM animal WHERE valorpago>500.00;
+SELECT * FROM animal WHERE datanasc>'2008-31-12';
+SELECT * FROM animal WHERE tipo='Doado' AND nome LIKE '%R%';
+SELECT * FROM animal WHERE idprop='7';
+SELECT * FROM animal WHERE idprop='7' ORDER BY nome;
+SELECT * FROM animal WHERE valorpago>=300.00 AND valorpago<=600.00;
+SELECT * FROM animal WHERE tipo='Doado' AND raca='Poodle';   
+SELECT * FROM animal WHERE valorpago>1000.00 AND raca='Beagle';
+SELECT COUNT(idpet) FROM animal;  
+SELECT COUNT(idpet) FROM animal WHERE tipo='Doado';
+SELECT COUNT(idpet) FROM animal WHERE tipo='Comprado';
+SELECT COUNT(idpet) FROM animal WHERE idprop='1';
+SELECT COUNT(*) AS total_idprop_animal FROM animal WHERE idprop='1';
+SELECT COUNT(idprop) FROM propietario GROUP BY estado;
+SELECT COUNT(*) AS total_idprop_animal FROM propietario GROUP BY estado;
+SELECT SUM(valorpago) FROM animal GROUP BY idprop;
+SELECT AVG(valorpago) FROM animal WHERE tipo='Comprado';
+SELECT AVG(valorpago) FROM animal WHERE valorpago>=150.00 and valorpago<=500.00;
+SELECT AVG(valorpago) AS média FROM animal;
+SELECT MAX(valorpago) AS valor_máximo FROM animal;
+SELECT nome, idprop FROM animal;
+SELECT nome, cidade FROM idprop WHERE tipo='Comprado';
+
+create table atendimento
+(
+
+idpet integer primary key not null ,
+idvet integer  not null ,/* é pra ser pk*/
+dataatend date not null,
+descricao character varying(200),
+preco numeric(12,2)
+
+);
+
+ALTER TABLE atendimento	
+ADD FOREIGN KEY (idpet) REFERENCES animal (idpet);
+
+ALTER TABLE atendimento	
+ADD FOREIGN KEY (idvet) REFERENCES veterinario (idvet);
+
+select * from atendimento;
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (1, 6, '2008-04-12', 'Consulta/Exame/Vacina', 150.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (2, 3, '2014-02-23', 'Consulta/Exame/Vacina', 200.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (3, 1, '2002-11-11', 'Consulta/Exame/Vacina', 100.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (4, 2, '2005-09-24', 'Consulta/Exame/Vacina', 150.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (5, 4, '2011-06-10', 'Exame/Remédio', 200.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (6, 7, '2015-12-25', 'Consulta', 300.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (7, 5, '2011-11-11', 'Vacina/Ração', 120.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (8, 9, '2004-03-24', 'Exame', 100.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (9, 10, '2007-11-30', 'Exame/Vacina', 500.00);
+
+INSERT INTO atendimento ("idpet", "idvet", "dataatend", "descricao", "preco")
+values (10, 8, '2010-05-12', 'Vacina', 150.00);
+
+select * from atendimento;
